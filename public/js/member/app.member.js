@@ -1,0 +1,1 @@
+angular.module('app.member', ['app.config']);

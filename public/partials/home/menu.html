@@ -1,0 +1,198 @@
+<div ng-controller="appCtrl">
+    <div ng-hide="isSpecificPage()" ng-cloak class="no-print">
+        <section id="header" class="top-header">
+            <header class="clearfix">
+                <!-- Logo -->
+                <div class="logo" style="overflow: hidden;">
+                    <a href="#/profile">
+                        <!--<span>{{user.company.shortForCompany || user.company.name || "welcome"}}</span>-->
+                        <img src="images/logo.png">
+                    </a>
+                </div>
+
+                <!-- needs to be put after logo to make it working-->
+                <div class="menu-button" toggle-off-canvas>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+
+
+                <div class="top-nav">
+                    <ul class="nav-left list-unstyled">
+                        <li>
+                            <a href="#/" toggle-min-nav class="toggle-min"><i class="fa fa-bars"></i></a>
+                        </li>
+                        <li class="dropdown text-normal line-heignt2 nav-profile" uib-dropdown>
+                            <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                                <img src="images/default-avatar.png" alt="" class="img-circle img30_30">
+                                        <span class="hidden-xs">
+                                            <span>{{user.outlet.name || "总部"}}</span>
+                                            <span>{{user.name || user.userName}}</span>
+                                        </span>
+                            </a>
+                            <ul class="dropdown-menu with-arrow" uib-dropdown-menu>
+                                <!--<li>
+                                    <a href="#/profile">
+                                        <i class="fa fa-user"></i>
+                                        <span>用户信息</span>
+                                    </a>
+                                </li>-->
+                                <li>
+                                    <a href="javascript:void(0)" ng-click="changePassword()">
+                                        <i class="fa fa-key"></i>
+                                        <span>修改密码</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ng-click="logout()">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>安全退出</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav-right pull-right list-unstyled">
+                        <li class="dropdown" uib-dropdown>
+                            <a href="#" class="dropdown-toggle bg-orange" uib-dropdown-toggle>
+                                <i class="fa fa-comment-o"></i>
+                                <span class="badge badge-info">0</span>
+                            </a>
+
+                            <div class="dropdown-menu pull-right with-arrow panel panel-default" uib-dropdown-menu>
+                                <div class="panel-heading">
+                                    没有收到信消息
+                                </div>
+                                <ul class="list-group">
+                                    <!--
+                                    <li class="list-group-item">
+                                        <a href="javascript:" class="media">
+                                                    <span class="pull-left media-icon">
+                                                        <span class="joyoStyle-view-containericon sm bg-info"><i class="fa fa-comment-o"></i></span>
+                                                    </span>
+                                            <div class="media-body">
+                                                <span class="block">消息1</span>
+                                                <span class="text-muted">1小时前</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javascript:" class="media">
+                                                    <span class="pull-left media-icon">
+                                                        <span class="joyoStyle-icon sm bg-danger"><i class="fa fa-comment-o"></i></span>
+                                                    </span>
+                                            <div class="media-body">
+                                                <span class="block">消息2</span>
+                                                <span class="text-muted">2小时前</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    -->
+                                </ul>
+                                <!--
+                                <div class="panel-footer">
+                                    <a href="javascript:">查看所有新消息</a>
+                                </div>
+                                -->
+                            </div>
+                        </li>
+                        <li class="dropdown" uib-dropdown>
+                            <a href="#" class="dropdown-toggle bg-success" uib-dropdown-toggle>
+                                <i class="fa fa-bell-o nav-icon"></i>
+                                <span class="badge badge-info">0</span>
+                            </a>
+
+                            <div class="dropdown-menu pull-right with-arrow panel panel-default" uib-dropdown-menu>
+                                <div class="panel-heading">
+                                    没有新通知
+                                </div>
+                                <ul class="list-group">
+                                    <!--
+                                    <li class="list-group-item">
+                                        <a href="javascript:" class="media">
+                                                    <span class="pull-left media-icon">
+                                                        <span class="joyoStyle-icon sm bg-success"><i class="fa fa-bell-o"></i></span>
+                                                    </span>
+                                            <div class="media-body">
+                                                <span class="block">通知1</span>
+                                                <span class="text-muted block">2分钟之前</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javascript:" class="media">
+                                                    <span class="pull-left media-icon">
+                                                        <span class="joyoStyle-icon sm bg-info"><i class="fa fa-bell-o"></i></span>
+                                                    </span>
+                                            <div class="media-body">
+                                                <span class="block">通知2</span>
+                                                <span class="text-muted">3小时之前</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    -->
+                                </ul>
+                                <!--
+                                <div class="panel-footer">
+                                    <a href="javascript:">查看所有通知</a>
+                                </div>
+                                -->
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void 0" class="bg-info">
+                                <i class="fa fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </header>
+        </section>
+
+        <aside id="nav-container">
+            <div id="nav-wrapper">
+                <div class="nav-placehoder">
+                </div>
+                <ul id="nav" slim-scroll collapse-nav highlight-active>
+                    <li><a ui-sref="menu.profile"> <i class="fa fa-dashboard"></i><span>主页</span> </a></li>
+                    <li require-permissions="members">
+                        <a href="#/members"><i class="fa fa-user"></i><span>用户管理</span></a>
+                        <ul>
+                            <li require-permissions="members.post">
+                                <a ui-sref="menu.addMember"><i class="fa fa-caret-right"></i><span>添加会员</span></a>
+                            </li>
+                            <li>
+                                <a ui-sref="menu.members"><i class="fa fa-caret-right"></i><span>会员列表</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li require-permissions="reports">
+                        <a href="#/report"><i class="fa fa-bar-chart"></i><span>统计报表</span></a>
+                        <ul>
+                            <li><a href="#/report/sale"><i class="fa fa-caret-right"></i><span>新增用户</span></a></li>
+                        </ul>
+                    </li>
+                    <li require-permissions="settings|roles|outlets|users|units">
+                        <a href="#/settings"><i class="fa fa-cogs"></i><span>系统设置</span></a>
+                        <ul>
+                            <li require-permissions="users">
+                                <a href="#/settings/user">
+                                    <i class="fa fa-caret-right"></i><span>用户管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <toaster-container toaster-options="{'position-class': 'toast-top-center', 'close-button': true}">
+    </toaster-container>
+    <div class="view-container" ng-click="hideNav()">
+        <section ui-view="menuContent" id="content" class="animate-fade-up"></section>
+    </div>
+</div>

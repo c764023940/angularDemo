@@ -1,0 +1,59 @@
+<div class="loading" ng-show="loading">
+    <span class="dots-loader">Loading...</span>
+</div>
+<div class="page">
+    <dl class="dl-outlet">
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">用户名:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入用户名" ng-model="userInfo.userName">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian">（字母、数字，不是少于6个）</dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">姓名:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入姓名" ng-model="userInfo.name">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian">（必填）</dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">昵称:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入昵称" ng-model="userInfo.nickName">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian"></dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">手机:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入手机号码" ng-model="userInfo.mobile">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian">（必填）</dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">密码:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入密码" ng-model="userInfo.password">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian">（必填）</dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">邮箱:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" placeholder="请输入邮箱" ng-model="userInfo.email">
+        </dd>
+        <dd class="col-xs-12 col-sm-3 col-md-4 col-lg-5 bitian"></dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">生日:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <input type="text" class="form-control" ng-click="openStartDate($event)" uib-datepicker-popup="yyyy-MM-dd"  placeholder="请输入生日" ng-model="userInfo.birthday"
+                   is-open="startDateOpened" datepicker-options="dateOptions">
+        </dd>
+        <div class="clearfix"></div>
+        <dt class="col-xs-12 col-sm-4 col-md-3 col-lg-2">性别:</dt>
+        <dd class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <button class="btn mr10" ng-class={'btn-primary':selectM,'btn-default':!selectM} ng-click="selectMan()">男</button>
+            <button class="btn " ng-class={'btn-primary':!selectM,'btn-default':selectM} ng-click="selectMan()">女</button>
+        </dd>
+        <div class="clearfix"></div>
+        <dd class="col-lg-offset-2 col-md-offset-3 col-sm-offset-4 col-xs-12 col-sm-8 col-md-9 col-lg-10 operation clearfix">
+            <button class="btn btn-line-primary btn-action mr10" ng-click="save()">保存</button>
+            <button class="btn btn-primary btn-action">取消</button>
+        </dd>
+    </dl>
+</div>

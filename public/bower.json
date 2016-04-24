@@ -1,0 +1,26 @@
+{
+  "name": "chengfei",
+  "description": "grunt",
+  "main": "index.js",
+  "authors": [
+    "chengfei"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "^1.2.5",
+    "bootstrap": "^3.3.6",
+    "angular": "angularjs#^1.5.3",
+    "angular-i18n": "^1.5.3"
+  }
+}
